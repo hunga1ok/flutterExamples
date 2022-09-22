@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/categories_screen.dart';
 
+import 'category_meals_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -27,11 +29,14 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'Robotoondensed',
               ),
               headlineMedium: const TextStyle(
-                fontSize: 24,
-                fontFamily: 'Robotoondensed',
-                fontWeight: FontWeight.bold
-              ))),
-      home: const CategoriesScreen(),
+                  fontSize: 24,
+                  fontFamily: 'Robotoondensed',
+                  fontWeight: FontWeight.bold))),
+      // home: const CategoriesScreen(),
+      routes: {
+        '/': (ctx) => const CategoriesScreen(),
+        CategoryMealsScreen.routeName: (ctx) => const CategoryMealsScreen(),
+      },
     );
   }
 }
