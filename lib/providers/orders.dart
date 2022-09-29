@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shop_app/providers/cart.dart';
 
 class OrderItem {
@@ -7,24 +7,28 @@ class OrderItem {
   final List<CartItem> products;
   final DateTime dateTime;
 
-  OrderItem(this.id, this.amount, this.products, this.dateTime);
+  OrderItem(
+      {required this.id,
+      required this.amount,
+      required this.products,
+      required this.dateTime});
 }
 
 class Orders with ChangeNotifier {
-  List<OrderItem> _orders = [];
+  final List<OrderItem> _orders = [];
 
   List<OrderItem> get orders {
-    return [...orders];
+    return [..._orders];
   }
 
   void addOrder(List<CartItem> cartProducts, double total) {
     _orders.insert(
       0,
       OrderItem(
-        DateTime.now().toString(),
-        total,
-        cartProducts,
-        DateTime.now(),
+        id: DateTime.now().toString(),
+        amount: total,
+        products: cartProducts,
+        dateTime: DateTime.now(),
       ),
     );
     notifyListeners();

@@ -4,6 +4,7 @@ import 'package:shop_app/providers/orders.dart' show Orders;
 import 'package:shop_app/widgets/order_item.dart';
 
 class OrdersScreen extends StatelessWidget {
+  static const routeName = '/orders';
   const OrdersScreen({super.key});
 
   @override
