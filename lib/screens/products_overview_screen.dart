@@ -12,11 +12,11 @@ enum FilterOptions {
 
 class ProductOverviewScreen extends StatelessWidget {
   var _showOnlyFavorites = false;
-  const ProductOverviewScreen({super.key});
+  ProductOverviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final productsContainer = Provider.of<Products>(context, listen: false);
+    // final productsContainer = Provider.of<Products>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: const Text('MyShop'),
