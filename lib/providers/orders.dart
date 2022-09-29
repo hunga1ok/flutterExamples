@@ -3,11 +3,11 @@ import 'package:shop_app/providers/cart.dart';
 
 class OrderItem {
   final String id;
-  final double amoun;
+  final double amount;
   final List<CartItem> products;
   final DateTime dateTime;
 
-  OrderItem(this.id, this.amoun, this.products, this.dateTime);
+  OrderItem(this.id, this.amount, this.products, this.dateTime);
 }
 
 class Orders with ChangeNotifier {
