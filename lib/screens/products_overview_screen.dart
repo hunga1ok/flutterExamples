@@ -13,9 +13,15 @@ enum FilterOptions {
   All,
 }
 
-class ProductOverviewScreen extends StatelessWidget {
+class ProductOverviewScreen extends StatefulWidget {
+  const ProductOverviewScreen({super.key});
+
+  @override
+  State<ProductOverviewScreen> createState() => _ProductOverviewScreenState();
+}
+
+class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
   var _showOnlyFavorites = false;
-  ProductOverviewScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +36,7 @@ class ProductOverviewScreen extends StatelessWidget {
               } else {
                 _showOnlyFavorites = false;
               }
+              setState(() {});
             },
             icon: const Icon(Icons.more_vert),
             itemBuilder: (_) => [
